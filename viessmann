@@ -1,0 +1,43 @@
+#!/bin/sh
+ 
+# Host to connect
+VC_HOST=localhost
+# Port as defined with ser2net
+VC_PORT=3002
+ 
+if [ "$1" = "autoconf" ]; then
+	echo yes;
+	exit 0;
+fi
+
+if [ "$1" = "config" ]; then
+cat << __EOM
+graph_title heating temperatures
+graph_args --lower-limit -20 --upper-limit 120
+graph_category heating
+graph_vlabel Temp in °C
+graph_scale no
+graph_info This graph shows some of the temps
+getOutsideTempLP.label Outside Temp (LP)
+getOutsideTempLP.info Outside temperature in degrees C.
+# getOutsideTempLP.warning 25
+# getOutsideTempLP.critical 30
+getWaterTemp.label Hot Water
+getWaterTemp.info hot water temperature in degrees C
+getBoilerTemp.label Boiler Temp
+getBoilerTemp.info boiler temperature in degrees C.
+getExhaustTemp.label collector
+getExhaustTemp.info collector temperature in degrees C.
+getExhaustTemp.warning 90
+getExhaustTemp.critical 120
+getTemp17B.label Return water 17B
+getTemp17B.info Return water temperature
+#getTemp17A.warning 75
+#getTemp17A.critical 85
+__EOM
+exit 0;
+fi
+ 
+/usr/local/bin/vclient -m --host $VC_HOST --port $VC_PORT getOutsideTempLP getWaterTemp getBoilerTemp getExhaustTemp getTemp17B
+
+exit 0

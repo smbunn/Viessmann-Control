@@ -1,0 +1,106 @@
+<vito>
+   <devices>
+        			<device ID="20C8" name="V200KW2" protocol="KW2"/>
+  </devices>
+  <commands>
+		<command name='getTempA' protocmd='getaddr'>
+				<addr>5525</addr>
+				<len>2</len>
+				<unit>UT</unit>
+				<description>Determine the outside temperature in degrees C</description>
+	      </command>
+      
+		<command name='getTempAg' protocmd='getaddr'>
+        		    	<addr>5527</addr>
+            			<len>2</len>
+            			<unit>UT</unit>
+        			<description>Determine the attenuated outside temperature in degrees C</description>
+	      	</command>
+      
+		<command name='getTempAbg' protocmd='getaddr'>
+            			<addr>0808</addr>
+            			<len>2</len>
+		            	<unit>UT</unit>
+            			<description>Determine the exhaust gas temperature in degrees C</description>
+      		</command>
+      
+      		<command name='getTemp17A' protocmd='getaddr'>
+            			<addr>080A</addr>
+            			<len>2</len>
+            			<unit>UT</unit>
+            			<description>Determine the temperature of 17A degrees C </description>
+      		</command>
+      
+		<command name='getPumpeStatusSp' protocmd='getaddr'>
+				<addr>0845</addr>
+				<len>1</len>
+				<unit>RT</unit>
+				<description>Determine the status of the storage tank charging pump</description>
+ 		</command>
+		
+		<command name='getTempWWsoll' protocmd='getaddr'>
+				<addr>0814</addr>
+				<len>2</len>
+				<unit>UT</unit>
+				<description>CHECK ::: Determine the hot water temperature in degrees C</description>
+		</command>
+		
+      		<command name='getTempWW' protocmd='getaddr'>
+				<addr>0812</addr>
+				<len>2</len>
+				<unit>UT</unit>
+				<description>Determine the water temperature in degrees C</description>
+      		</command>
+      
+		<command name='getTempKsoll' protocmd='getaddr'>
+				<addr>5502</addr>
+				<len>2</len>
+				<unit>UT</unit>
+				<error>05 05</error>
+				<description>CHECK ::: Determine the boiler temperature in degrees C.</description>
+		</command>
+		
+		<command name='getTempKist' protocmd='getaddr'>
+				<addr>0810</addr>
+				<len>2</len>
+				<unit>UT</unit>
+				<error>05 05</error>
+				<description>Determine the boiler temperature in degrees C</description>
+		</command>
+		
+		<command name='getBrennerStatus' protocmd='getaddr'>
+				<addr>551E</addr>
+				<len>1</len>
+				<unit>RT</unit>
+				<description>CHECK ::: Determine the burner status </description>
+		</command>
+		
+		<command name='getBrennerStarts' protocmd='getaddr'>
+				<addr>088A</addr>
+				<len>2</len>
+				<unit>CO</unit>
+				<description> Determine the burner starts</description>
+		</command>
+		
+		<command name='getBrennerStunden1' protocmd='getaddr'>
+				<addr>0886</addr>
+				<len>4</len>
+				<unit>CS</unit>
+				<description> the burner hours Level 1</description>
+		</command>		
+  
+		<command name='getBrennerStunden2' protocmd='getaddr'>
+				<addr>08AB</addr>
+				<len>4</len>
+				<unit>CS</unit>
+				<description>Determine the burner stage 2 hours</description>
+		</command>
+		
+		<command name='getSystemTime' protocmd='getaddr'>
+				<addr>088E</addr>
+				<len>8</len>
+				<unit>TI</unit>
+				<description>system time</description>
+		</command>
+	</commands>
+</vito>

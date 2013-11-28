@@ -1,0 +1,461 @@
+<vito>
+<devices>
+	<device ID="2098" name="V200KW2" protocol="KW2"/>
+	<device ID="2053" name="GWG_VBEM" protocol="GWG"/>
+	<device ID="20C2" name="VDensHO1" protocol="KW2"/>
+</devices>
+<commands> 
+	<command name='getOutsideTemp' protocmd='getaddr'>
+		<addr>0800</addr>
+		<len>2</len>
+		<unit>UT</unit>
+		<description>Determine the outside temperature in degrees C</description>
+	</command>
+	<command name='getBoilerTemp' protocmd='getaddr'>
+		<addr>0802</addr>
+		<len>2</len>
+		<unit>UT</unit>
+		<description>Determine the boiler temperature in degrees C</description>
+		<device ID="2053">
+			<addr>70</addr>
+			<unit>UT1</unit>
+			<len>1</len>
+		</device>
+	</command>
+	<command name='getWaterTemp' protocmd='getaddr'>
+		<addr>0804</addr>
+		<len>2</len>
+		<unit>UT</unit>
+		<description>Determine the water temperature in degrees C</description>
+	</command>
+	<command name='getExhaustTemp' protocmd='getaddr'>
+		<addr>0808</addr>
+		<len>2</len>
+		<unit>UT</unit>
+		<description>Determine the exhaust temperature in degrees C</description>
+	</command>
+	<command name='getBoilerTempLP' protocmd='getaddr'>
+      <addr>0810</addr>
+      <len>2</len>
+      <unit>UT</unit>
+      <description>Determine the boiler temperature (Low Pass) in degrees C</description>
+	</command>
+	<command name='getTemp17A' protocmd='getaddr'>
+		<addr>080A</addr>
+		<len>2</len>
+		<unit>UT</unit>
+		<description>Determine the return temperature 17A in degrees C</description>
+	</command>
+	<command name='getTemp17B' protocmd='getaddr'>
+		<addr>080C</addr>
+		<len>2</len>
+		<unit>UT</unit>
+		<description>Determine the flow temperature 17B in degrees C</description>
+	</command>
+	<command name='getOutsideTempLP' protocmd='getaddr'>
+		<addr>5525</addr>
+		<len>2</len>
+		<unit>UT</unit>
+		<description>Determine the outside temperature (Low Pass) in degrees C</description>
+	</command>
+	<command name='getOutsideTempAt' protocmd='getaddr'>
+		<addr>5527</addr>
+		<len>2</len>
+		<unit>UT</unit>
+		<description>Determine the outside temperature (Attenuated) in degrees C</description>
+	</command>
+	<command name='getBoilerTemp2' protocmd='getaddr'>
+		<addr>A309</addr>
+		<len>2</len>
+		<unit>UT2</unit>
+		<description>Determine the Boiler temperature (higher accuracy) in degrees C</description>
+	</command>
+	<command name='getRoomTempLP' protocmd='getaddr'>
+		<addr>0896</addr>
+		<len>2</len>
+		<unit>UT</unit>
+		<description>Determine the room temperature (Low Pass) in degrees C</description>
+	</command>
+	<command name='getFlowTemp' protocmd='getaddr'>
+		<addr>2544</addr>
+		<len>2</len>
+		<unit>UT</unit>
+		<description>Determine the flow temperature A1M1 in degrees C</description>
+	</command>
+	<command name='getRoomTempSP2' protocmd='getaddr'>
+		<addr>250C</addr>
+		<len>2</len>
+		<unit>UT</unit>
+		<description>Determine the room temperature setpoint in degrees C</description>
+	</command> 
+	<command name='getBoilerTemp3' protocmd='getaddr'>
+		<addr>555A</addr>
+		<len>2</len>
+		<unit>UT</unit>
+		<description>Determine the Boiler temperature again in degrees C</description>
+	</command>
+	<command name='getBurnerStarts' protocmd='getaddr'>
+		<addr>088A</addr>
+		<len>4</len>
+		<unit>CO</unit>
+		<description>Get Burner Starts</description>
+		<device ID="2053"></device>
+	</command>
+	<command name='getBurnerHours1' protocmd='getaddr'>
+		<addr>08A7</addr>
+		<len>4</len>
+		<unit>CS</unit>
+		<description>Determine the burner hours Level 1</description>
+		<device ID="2053" protocmd='geteaddr'>
+			<addr>17</addr>
+			<len>2</len>
+			<unit>BH</unit>
+		</device>
+	</command>
+	<command name='getBurnerHours2' protocmd='getaddr'>
+		<addr>08AB</addr>
+		<len>4</len>
+		<unit>CS</unit>
+		<description>Determine the burner hours Level 2</description>
+		<device ID="2053"></device>
+	</command>
+	<command name='getOilConsump' protocmd='getaddr'>
+		<addr>7574</addr>
+		<len>4</len>
+		<unit>FL</unit>
+		<description>Get Oil Consumption</description>
+		<device ID="2053"></device>
+	</command>        
+	<command name='getHeatingPumpStatus' protocmd='getaddr'>
+		<addr>2906</addr>
+		<len>1</len>
+		<unit>RT</unit>
+		<description>Determine the status of the pump</description>
+		<device ID="2053" protocmd='getpaddr'>
+			<addr>01</addr>
+			<len>1</len>
+			<bit>0</bit>
+			<unit>BST</unit>
+		</device>
+	</command>
+	<command name='getPumpStatusSp' protocmd='getaddr'>
+		<addr>0845</addr>
+		<len>1</len>
+		<unit>RT</unit>
+		<description>Determine the status of the hot water tank charging pump</description>
+		<device ID="2053"></device>
+		<device ID="20C2">
+			<addr>6513</addr>
+			<len>1</len>
+		</device>
+	</command>
+	<command name='getCircPumpStatus' protocmd='getaddr'>
+		<addr>0846</addr>
+		<len>1</len>
+		<unit>RT</unit>
+		<description>Determine the status of the circulation pump</description>
+		<device ID="2053" protocmd='getpaddr'>
+			<addr>01</addr>
+			<len>1</len>
+			<bit>2</bit>
+			<unit>BST</unit>
+		</device>
+		<device ID="20C2">
+			<addr>6515</addr>
+			<len>1</len>
+		</device>
+	</command>
+	<command name='getBurnerOutput' protocmd='getaddr'>
+		<addr>55E3</addr>
+		<len>1</len>
+		<unit>PR1</unit>
+		<description>Burner output 0 to 100%</description>
+		<device ID="2053"></device>
+	</command>
+	<command name='getMixerPosition' protocmd='getaddr'>
+		<addr>254C</addr>
+		<len>1</len>
+		<unit>PR</unit>
+		<description>Mixer poition</description>
+		<device ID="2053"></device>
+	</command>
+	<command name='getThrottlePosition' protocmd='getaddr'>
+		<addr>5555</addr>
+		<len>1</len>
+		<unit>PR1</unit>
+		<description>Throttle poition</description>
+		<device ID="2053"></device>
+	</command>
+	<command name='getCurrentOpMode' protocmd='getaddr'>
+		<addr>2301</addr>
+		<len>1</len>
+		<unit>BA</unit>
+		<description>Current Operating Mode</description>
+		<device ID="2053">
+			<addr>51</addr>
+			<len>1</len>
+			<unit>BA</unit>
+		</device>
+	</command>
+	<command name='getSavingMode' protocmd='getaddr'>
+		<addr>2302</addr>
+		<len>1</len>
+		<unit>RT</unit>
+		<description>Check if in Saving Mode</description>
+		<device ID="2053"></device>
+	</command>
+	<command name='getPartyMode' protocmd='getaddr'>
+		<addr>2303</addr>
+		<len>1</len>
+		<unit>RT</unit>
+		<description>Check if in Party Mode</description>
+		<device ID="2053"></device>
+	</command>
+	<command name='getStatusFrost' protocmd='getaddr'>
+		<addr>2510</addr>
+		<len>1</len>
+		<unit>ST</unit>
+		<description>Frost Mode</description>
+		<device ID="2053"></device>
+	</command>
+	<command name='getTempParty' protocmd='getaddr'>
+		<addr>2308</addr>
+		<len>1</len>
+		<unit>ST</unit>
+		<description>Solltemperatur Partybetrieb M1</description>
+		<device ID="2053"></device>
+	</command>
+	<command name='getSystemTime' protocmd='getaddr'>
+		<addr>088E</addr>
+		<len>8</len>
+		<unit>TI</unit>
+		<description>Get system time</description>
+		<device ID="2053"></device>
+	</command>
+	<command name='setSystemTime' protocmd='setaddr'>
+		<addr>088E</addr>
+		<len>8</len>
+		<unit>TI</unit>
+		<description>Setze Systemzeit</description>
+		<device ID="2053"></device>
+	</command>					
+	<command name='setTempPartyM1' protocmd='setaddr'>
+		<addr>2308</addr>
+		<len>1</len>
+		<unit>ST</unit>
+		<description>Setze die Warmwassersolltemperatur Party M1 in Grad C</description>
+		<device ID="2053"></device>
+	</command>
+	<command name='setCurrentMode' protocmd='setaddr'>
+		<addr>2301</addr>
+		<len>1</len>
+		<unit>ST</unit>
+		<description>Set Current Mode</description>
+		<device ID="2053"></device>
+	</command>
+	<command name='setSavingMode' protocmd='setaddr'>
+		<addr>2302</addr>
+		<len>1</len>
+		<unit>RT</unit>
+		<description>Set Savings Mode</description>
+		<device ID="2053"></device>
+	</command> 
+	<command name='setPartyMode' protocmd='setaddr'>
+		<addr>2303</addr>
+		<len>1</len>
+		<unit>RT</unit>
+		<description>Set Party Mode</description>
+		<device ID="2053"></device>
+	</command>
+	<command name='getHeatingCurveLevel' protocmd='getaddr'>
+		<addr>2304</addr>
+		<len>1</len>
+		<unit>ST</unit>
+		<description>Get the heating curve level</description>
+		<device ID="2053">
+			<addr>64</addr>
+			<unit>ST</unit>
+			<len>1</len>
+		</device>
+	</command>
+	<command name='getHeatingCurveSlope' protocmd='getaddr'>
+		<addr>2305</addr>
+		<len>1</len>
+		<unit>UN</unit>
+		<description>Get the heating curve slope</description>
+		<device ID="2053">
+			<addr>65</addr>
+			<unit>UN</unit>
+			<len>1</len>
+		</device>
+	</command>
+	<command name='setHeatingCurveSlope' protocmd='setaddr'>
+		<addr>2305</addr>
+		<len>1</len>
+		<unit>UN</unit>
+		<description>Set the heating curve slope</description>
+		<device ID="2053"></device>
+	</command>
+	<command name='setHeatingCurveLevel' protocmd='setaddr'>
+		<addr>2304</addr>
+		<len>1</len>
+		<unit>ST</unit>
+		<description>Set the heating curve level</description>
+		<device ID="2053"></device>
+	</command>
+	<command name='getRoomTempSP' protocmd='getaddr'>
+		<addr>2306</addr>
+		<len>1</len>
+		<unit>UT1</unit>
+		<description>Get the room temperature setpoint</description>
+	</command>	
+	<command name='getDevType' protocmd='getaddr'>
+		<addr>00F8</addr>
+		<len>2</len>
+		<unit>DT</unit>
+		<description>Get teh description of the attached bloiler</description>
+		<device ID="2053" protocmd='getvaddr'>
+			<addr>F8</addr>
+			<len>4</len>
+			<error>05 05 05 05</error>
+		</device>
+	</command>
+	<command name='init' protocmd='getaddr'>
+		<description>Inintialisierung</description>
+		<device ID="2053" protocmd='init'>
+			<addr>dummy</addr>
+		</device>
+	</command>
+	<command name='get' protocmd='gettestaddr'>
+		<description>Testabfrage, Adresse eingeben</description>
+		<device ID="2053">
+			<addr>dummy</addr>
+			<len>1</len>
+		</device>
+	</command>
+	<command name='vget' protocmd='getvtestaddr'>
+		<description>Testabfrage, Virtuelle Adresse eingeben</description>
+		<device ID="2053">
+			<addr>dummy</addr>
+			<len>1</len>
+		</device>
+	</command>
+	<command name='bget' protocmd='getbtestaddr'>
+		<description>Testabfrage, Bedienteil Adresse eingeben</description>
+		<device ID="2053">
+			<addr>dummy</addr>
+			<len>1</len>
+		</device>
+	</command>
+	<command name='pget' protocmd='getptestaddr'>
+                <description>Testabfrage, Port Adresse eingeben</description>
+                <device ID="2053">
+                    <addr>dummy</addr>
+                    <len>1</len>
+                </device>
+	</command>
+	<command name='eget' protocmd='getetestaddr'>
+		<description>Testabfrage, EEProm Adresse eingeben</description>
+		<device ID="2053">
+			<addr>dummy</addr>
+			<len>1</len>
+		</device>
+	</command>
+	<command name='xget' protocmd='getxtestaddr'>
+		<description>Testabfrage, XRAM Adresse eingeben</description>
+		<device ID="2053">
+			<addr>dummy</addr>
+			<len>1</len>
+		</device>
+	</command>
+	<command name='kmget' protocmd='getkmtestaddr'>
+		<description>Testabfrage, KM-Bus EEProm Adresse eingeben</description>
+		<device ID="2053">
+			<addr>dummy</addr>
+			<len>1</len>
+		</device>
+	</command>
+	<command name='getExtBA' protocmd='getxaddr'>
+		<description>Ermittle Zustand der externen Betriebsartenumschaltung</description>
+		<device ID="2053">
+			<addr>00</addr>
+			<len>1</len>
+			<bit>0</bit>
+			<unit>BST</unit>
+		</device>
+	</command>
+	<command name='getError0' protocmd='getaddr'>
+		<addr>7507</addr>
+		<len>9</len>
+		<unit>ES</unit>
+		<description>Determine error history entry 1</description>
+		<device ID="2053">
+			<addr>3F</addr>
+			<len>1</len>
+			<unit>ESG</unit>	
+		</device>
+	</command>
+	<command name='getError1' protocmd='getaddr'>
+		<addr>7510</addr>
+		<len>9</len>
+		<unit>ES</unit>
+		<description>Determine error history entry 2</description>
+		<device ID="2053"></device>
+	</command>			
+	<command name='getError2' protocmd='getaddr'>
+		<addr>7519</addr>
+		<len>9</len>
+		<unit>ES</unit>
+		<description>Determine error history entry 3</description>
+		<device ID="2053"></device>
+	</command>			
+	<command name='getError3' protocmd='getaddr'>
+		<addr>7522</addr>
+		<len>9</len>
+		<unit>ES</unit>
+		<description>Determine error history entry 4</description>
+		<device ID="2053"></device>
+	</command>			
+	<command name='getError4' protocmd='getaddr'>
+		<addr>752B</addr>
+		<len>9</len>
+		<unit>ES</unit>
+		<description>Determine error history entry 5</description>
+		<device ID="2053"></device>
+	</command>			
+	<command name='getError5' protocmd='getaddr'>
+		<addr>7534</addr>
+		<len>9</len>
+		<unit>ES</unit>
+		<description>Determine error history entry 6</description>
+		<device ID="2053"></device>
+	</command>			
+	<command name='getError6' protocmd='getaddr'>
+		<addr>753D</addr>
+		<len>9</len>
+		<unit>ES</unit>
+		<description>Determine error history entry 7</description>
+		<device ID="2053"></device>
+	</command>			
+	<command name='getError7' protocmd='getaddr'>
+		<addr>7546</addr>
+		<len>9</len>
+		<unit>ES</unit>
+		<description>Determine error history entry 8</description>
+		<device ID="2053"></device>
+	</command>			
+	<command name='getError8' protocmd='getaddr'>
+		<addr>754F</addr>
+		<len>9</len>
+		<unit>ES</unit>
+		<description>EDetermine error history entry 9</description>
+		<device ID="2053"></device>
+	</command>
+	<command name='getError9' protocmd='getaddr'>
+		<addr>7558</addr>
+		<len>9</len>
+		<unit>ES</unit>
+		<description>Determine error history entry 10</description>
+	</command>
+</commands> 
+</vito>
