@@ -83,7 +83,7 @@
 	   <abbrev>CS</abbrev>
 	   <calc get='V/3600' set='V*3600'/>
 	   <type>uint</type>
-	   <entity>Stunden</entity>
+	   <entity>Hours</entity>
 	</unit>
 	<unit name='Flow'>
 	   <abbrev>FL</abbrev>
