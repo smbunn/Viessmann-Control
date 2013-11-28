@@ -14,8 +14,8 @@ if [ "$1" = "config" ]; then
 cat << __EOM
 graph_title heating temperatures
 graph_args --lower-limit -20 --upper-limit 120
-graph_category heating
-graph_vlabel Temp in °C
+graph_category Viessmann
+graph_vlabel Temp C
 graph_scale no
 graph_info This graph shows some of the temps
 getOutsideTempLP.label Outside Temp (LP)
