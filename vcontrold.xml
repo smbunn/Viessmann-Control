@@ -31,15 +31,21 @@
 	   <type>short</type>
 	   <entity></entity>
 	</unit>	
-	<unit name='Temperatur100'>
+	<unit name='Temperature100'>
 	   <abbrev>UT2</abbrev>
 	   <calc get='V/100' set='V*100'/>
 	   <type>short</type>
 	   <entity>Degrees Celsius</entity>
 	</unit>
-	<unit name='Temperatur 1Byte'>
+	<unit name='Temperature 1Byte'>
           <abbrev>UT1</abbrev>
           <calc get='V/2' set='V*2'/>
+          <type>char</type>
+          <entity>Degrees Celsius</entity>
+	</unit>
+	<unit name='Temperature Short'>
+          <abbrev>TS</abbrev>
+          <calc get='V' set='V'/>
           <type>char</type>
           <entity>Degrees Celsius</entity>
 	</unit>
@@ -110,7 +116,7 @@
 	   <enum bytes='02' text='NORM'/>
 	   <enum bytes='04' text='H+WW'/>
 	   <enum bytes='03' text='H+WW'/>
-	   <enum bytes='05' text='ABSCHALT'/>
+	   <enum bytes='05' text='Standby'/>
 	   <enum text='UNKNOWN'/>
 	</unit>	   
 	<unit name='SetReturnStatus'>

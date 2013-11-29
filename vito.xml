@@ -218,11 +218,11 @@
 		<description>Frost Mode</description>
 		<device ID="2053"></device>
 	</command>
-	<command name='getTempParty' protocmd='getaddr'>
+	<command name='getPartyTemp' protocmd='getaddr'>
 		<addr>2308</addr>
 		<len>1</len>
-		<unit>ST</unit>
-		<description>Solltemperatur Partybetrieb M1</description>
+		<unit>TS</unit>
+		<description>Get Party Temperature SP</description>
 		<device ID="2053"></device>
 	</command>
 	<command name='getSystemTime' protocmd='getaddr'>
@@ -239,11 +239,11 @@
 		<description>Setze Systemzeit</description>
 		<device ID="2053"></device>
 	</command>					
-	<command name='setTempPartyM1' protocmd='setaddr'>
+	<command name='setPartyTemp' protocmd='setaddr'>
 		<addr>2308</addr>
 		<len>1</len>
-		<unit>ST</unit>
-		<description>Setze die Warmwassersolltemperatur Party M1 in Grad C</description>
+		<unit>TS</unit>
+		<description>Set Party Temperature SP</description>
 		<device ID="2053"></device>
 	</command>
 	<command name='setCurrentMode' protocmd='setaddr'>
@@ -306,9 +306,15 @@
 	<command name='getRoomTempSP' protocmd='getaddr'>
 		<addr>2306</addr>
 		<len>1</len>
-		<unit>UT1</unit>
+		<unit>TS</unit>
 		<description>Get the room temperature setpoint</description>
-	</command>	
+	</command>
+	<command name='setRoomTempSP' protocmd='setaddr'>
+		<addr>2306</addr>
+		<len>1</len>
+		<unit>TS</unit>
+		<description>Get the room temperature setpoint</description>
+	</command>		
 	<command name='getDevType' protocmd='getaddr'>
 		<addr>00F8</addr>
 		<len>2</len>
