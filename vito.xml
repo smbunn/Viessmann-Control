@@ -205,10 +205,16 @@
   <command name='setDHWTempSP' protocmd='setaddr'>
     <addr>6300</addr>
     <len>2</len>
-    <unit>UT</unit>
+    <unit>UT1U</unit>
     <description>Set the hot water temperature setpoint</description>
   </command>
-  <command name='getCurrentOpMode1' protocmd='getaddr'>
+  <command name='getCurrentOpMode' protocmd='getaddr'>
+    <addr>2323</addr>
+    <len>1</len>
+    <unit>CM</unit>
+    <description>Current Operating Mode</description>
+  </command> 
+ <command name='getCurrentOpMode1' protocmd='getaddr'>
     <addr>2500</addr>
     <len>1</len>
     <unit>RM</unit>
@@ -280,18 +286,18 @@
     <unit>UT</unit>
     <description>Determine the room temperature M3 in degrees C</description>
   </command>  
-	<command name='getSavingMode' protocmd='getaddr'>
+  <command name='getSavingMode' protocmd='getaddr'>
 		<addr>2331</addr>
 		<len>1</len>
 		<unit>RT</unit>
 		<description>Check if in Saving Mode</description>
-	</command>
-	<command name='getPartyMode' protocmd='getaddr'>
+  </command>
+  <command name='getPartyMode' protocmd='getaddr'>
 		<addr>2330</addr>
 		<len>1</len>
 		<unit>RT</unit>
 		<description>Check if in Party Mode</description>
-	</command>
+  </command>
   <command name='getHeatingCurveLevel' protocmd='getaddr'>
     <addr>2304</addr>
     <len>1</len>
@@ -341,21 +347,21 @@
 		<unit>TI</unit>
 		<description>Get system time</description>
 		<device ID="2053"></device>
-	</command>
-	<command name='setSystemTime' protocmd='setaddr'>
+  </command>
+  <command name='setSystemTime' protocmd='setaddr'>
 		<addr>088E</addr>
 		<len>8</len>
 		<unit>TI</unit>
 		<description>Setze Systemzeit</description>
 		<device ID="2053"></device>
-	</command>					
-	<command name='getError0' protocmd='getaddr'>
+  </command>					
+  <command name='getError0' protocmd='getaddr'>
 		<addr>7507</addr>
 		<len>9</len>
 		<unit>ES</unit>
 		<description>Determine error history entry 1</description>
-	</command>
-	<command name='getError1' protocmd='getaddr'>
+  </command>
+  <command name='getError1' protocmd='getaddr'>
 		<addr>7510</addr>
 		<len>9</len>
 		<unit>ES</unit>

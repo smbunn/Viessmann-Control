@@ -100,7 +100,7 @@
 	<unit name='Flow'>
 	   <abbrev>FL</abbrev>
 	   <calc get='V/1000' set='V*1000'/>
-	   <type>uint</type>
+	   <type>int</type>
 	   <entity></entity>
 	</unit>
 	<unit name='CycleTime'>
