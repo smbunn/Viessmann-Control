@@ -108,17 +108,25 @@
 	   <enum bytes='01' text='1'/>
 	   <enum text='NOT OK'/>
 	</unit>
-	<unit name='BetriebsArt'>
-	   <abbrev>BA</abbrev>
+	<unit name='ChangeMode'>
+	   <abbrev>CM</abbrev>
 	   <type>enum</type>
-	   <enum bytes='00' text='WW'/>
-	   <enum bytes='01' text='RED'/>
-	   <enum bytes='02' text='NORM'/>
-	   <enum bytes='04' text='H+WW'/>
-	   <enum bytes='03' text='H+WW'/>
-	   <enum bytes='05' text='Standby'/>
+	   <enum bytes='00' text='Standby'/>
+	   <enum bytes='01' text='DHW Only'/>
+	   <enum bytes='02' text='H+WW'/>
+	   <enum bytes='03' text='Permanently Reduced Operation'/>
+	   <enum bytes='04' text='Permanently Normal Operation'/>
 	   <enum text='UNKNOWN'/>
-	</unit>	   
+	</unit>
+	<unit name='ReadMode'>
+	   <abbrev>RM</abbrev>
+	   <type>enum</type>
+	   <enum bytes='00' text='Standby mode (permanently)'/>
+	   <enum bytes='01' text='Reduced Operation (timer)'/>
+	   <enum bytes='02' text='Normal Operation (timer)'/>
+	   <enum bytes='03' text='Normal Operation (permanently)'/>
+	   <enum text='UNKNOWN'/>
+	</unit>	   	
 	<unit name='SetReturnStatus'>
            <abbrev>SR</abbrev>
            <type>enum</type>
@@ -133,12 +141,26 @@
 	<unit name='ErrorState'>
 	   <abbrev>ES</abbrev>
 	   <type>errstate</type>
-	   <enum bytes='00' text='Control mode (no error)'/>
-	   <enum bytes='0F' text='Maintenance (reset coding for 24 to 0)'/>
+	   <enum bytes='00' text='No faults'/>
+	   <enum bytes='01' text='System fault'/>
+	   <enum bytes='02' text='Data error standard setting'/>
+	   <enum bytes='03' text='Configuration fault'/>
+	   <enum bytes='05' text='Fault refrigerant circuit'/>		   
+	   <enum bytes='06' text='Fault refrigerant circuit 2'/>	
+	   <enum bytes='07' text='Message refrigerant circuit'/>	
+	   <enum bytes='08' text='Message refrigerant circuit 2'/>
+	   <enum bytes='09' text='Electricty Meter PV'/>
+	   <enum bytes='0A' text='External Unit'/>	   
+	   <enum bytes='0B' text='External Unit'/>	   
+	   <enum bytes='0C' text='External Unit'/>	
+	   <enum bytes='0D' text='Test Mode External Unit'/>
+	   <enum bytes='0E' text='Ventilation Unit'/>	   	   
+	   <enum bytes='0F' text='Ventilation Unit'/>
 	   <enum bytes='10' text='Outside temperature sensor short circuit'/>
-	   <enum bytes='18' text='Interruption outside temperature sensor'/>
-	   <enum bytes='20' text='Short-circuit flow temperature sensor'/>
-	   <enum bytes='21' text='Short-circuit temperature sensor rewind'/>
+	   <enum bytes='18' text='Outside temperature sensor open circuit'/>
+	   <enum bytes='20' text='Short-circuit flow sensor secondary'/>
+	   <enum bytes='21' text='Short-circuit return temperature sensor secondary'/>
+	   <enum bytes='22' text='Short-circuit return temperature sensor secondary 2'/>
 	   <enum bytes='28' text='Interruption outside temperature sensor'/>
 	   <enum bytes='29' text='Interruption rewind temperature sensor'/>
 	   <enum bytes='30' text='Boiler temperature sensor short circuit'/>
@@ -147,56 +169,71 @@
 	   <enum bytes='42' text='Interruption flow temperature sensor M2'/>
 	   <enum bytes='50' text='Short-circuit temperature sensor memory'/>
 	   <enum bytes='58' text='Interruption temperature sensor memory'/>
-	   <enum bytes='92' text='Solar: Kurzschluss Kollektortemperatursensor'/>
-	   <enum bytes='93' text='Solar: Kurzschluss Sensor S3'/>
-	   <enum bytes='94' text='Solar: Kurzschluss Speichertemperatursensor'/>
-	   <enum bytes='9A' text='Solar: Unterbrechung Kollektortemperatursensor'/>
-	   <enum bytes='9B' text='Solar: Unterbrechung Sensor S3'/>
-	   <enum bytes='9C' text='Solar: Unterbrechung Speichertemperatursensor'/>
-	   <enum bytes='9F' text='Solar: Fehlermeldung Solarteil (siehe Solarregler)'/>
-	   <enum bytes='A7' text='Control unit faulty'/>
-	   <enum bytes='B0' text='Short exhaust temperature sensor'/>
-	   <enum bytes='B1' text='Communication error Control Unit'/>
-	   <enum bytes='B4' text='Internal error (Electronics)'/>
+	   <enum bytes='92' text='Solar: short circuit, collector temperature sensor'/>
+	   <enum bytes='93' text='Solar: short circuit, collector return temp. sensor'/>
+	   <enum bytes='94' text='Solar: short circuit, cylinder temperature sensor'/>
+	   <enum bytes='9A' text='Solar: lead break, collector temperature sensor'/>
+	   <enum bytes='9B' text='Solar: lead break, collector return temp. sensor'/>
+	   <enum bytes='9C' text='Solar: lead break, cylinder temperature sensor'/>
+	   <enum bytes='9F' text='Solar: gen. error message'/>
+	   <enum bytes='A7' text='Fault, programming unit (clock module)'/>
+	   <enum bytes='B0' text='Short circuit, flue gas temperature sensor'/>
+	   <enum bytes='B1' text='KM Bus Communication error circ 1'/>
+	   <enum bytes='B2' text='KM Bus Communication error circ 2'/>
+	   <enum bytes='B4' text='A to D converter error'/>
 	   <enum bytes='B5' text='Internal error (Electronics)'/>
 	   <enum bytes='B6' text='Invalid hardware ID (Electronics)'/>
-	   <enum bytes='B7' text='Internal error (boiler encodable connector)'/>
-	   <enum bytes='B8' text='Interrupting exhaust temperature senso'/>
-	   <enum bytes='B9' text='Repeat internal error (data input)'/>
-	   <enum bytes='BA' text='Communication error extension kit for mixer circuit M2'/>
-	   <enum bytes='BC' text='Remote communication error Vitorol, heating M1'/>
-	   <enum bytes='BD' text='Remote communication error Vitorol, heating M2'/>
-	   <enum bytes='BE' text='Incorrect coding remote control Vitorol'/>
+	   <enum bytes='B7' text='KM Bus external unit error'/>
+	   <enum bytes='B8' text='Lead break, flue gas temperature sensor'/>
+	   <enum bytes='B9' text='KM Bus Solar control, unit'/>
+	   <enum bytes='BA' text='KM Bus mixer circuit'/>
+	   <enum bytes='BC' text='KM Bus remote control, heating M1'/>
+	   <enum bytes='BD' text='KM Bus remote control, heating M2'/>
+	   <enum bytes='BE' text='KM Bus remote control, heating M3'/>
+	   <enum bytes='BF' text='Incorrect LON module'/>
 	   <enum bytes='C1' text='External safety device (boiler cools off)'/>
-	   <enum bytes='C2' text='Kommunikationsfehler Solarregelung'/>
-	   <enum bytes='C5' text='Communication error variable speed heating circuit pump, heating circuit M1'/>
-	   <enum bytes='C6' text='Communication error variable speed heating circuit pump, heating circuit M2'/>
-	   <enum bytes='C7' text='Incorrect coding of the heating circuit pump'/>
-	   <enum bytes='C9' text='Fault message on the control module V active'/>
-	   <enum bytes='CD' text='communication error Vitocom 100 (KM-BUS)'/>
-	   <enum bytes='CE' text='communication error Schaltmodul-V'/>
-	   <enum bytes='CF' text='communication error LON Modul'/>
-	   <enum bytes='D1' text='Burner Fault'/>
+	   <enum bytes='C2' text='Communication error, solar control unit (KM BUS)'/>
+	   <enum bytes='C5' text='Error, variable speed pump, heating circuit M1 (KM BUS)'/>
+	   <enum bytes='C6' text='Error, variable speed pump, heating circuit M2 (KM BUS)'/>
+	   <enum bytes='C7' text='Error, variable speed pump, heating circuit M3 (KM BUS)'/>
+	   <enum bytes='C8' text='Error, water level limiter'/>
+	   <enum bytes='C9' text='Error, maximum pressure'/>
+	   <enum bytes='CA' text='Error, minimum pressure/Error maximum pressure 2'/>
+	   <enum bytes='CB' text='Error, maximum pressure 2'/>
+	   <enum bytes='CD' text='cCommunication error, Vitocom 300 (KM BUS)'/>
+	   <enum bytes='CE' text='Communication error, connection extension (KM BUS)'/>
+	   <enum bytes='CF' text='Communication error: LON – module for controller module'/>
+	   <enum bytes='D1' text='Burner Fault, Boiler'/>
 	   <enum bytes='D4' text='Safety breaker tripped or fault message is not inserted properly'/>
-	   <enum bytes='DA' text='Short circuit temperature sensor, heating circuit M1'/>
-	   <enum bytes='DB' text='Short circuit temperature sensor, heating circuit M2'/>
-	   <enum bytes='DD' text='Interruption temperature sensor, heating circuit M1'/>
-	   <enum bytes='DE' text='Interruption temperature sensor, heating circuit M2'/>
+	   <enum bytes='D5' text='Cascade: Boiler does not respond'/>
+	   <enum bytes='D6' text='External fault 1, plug-in adaptor'/>
+	   <enum bytes='D7' text='External fault 2, plug-in adaptor'/>
+	   <enum bytes='D8' text='External fault 3, plug-in adaptor'/>	   
+	   <enum bytes='DA' text='Short circuit room temperature sensor, heating circuit M1'/>
+	   <enum bytes='DB' text='Short circuit room temperature sensor, heating circuit M2'/>
+	   <enum bytes='DC' text='Short circuit room temperature sensor, heating circuit M3'/>
+	   <enum bytes='DD' text='ead break room temperature sensor, heating circuit M1'/>
+	   <enum bytes='DE' text='Lead break room temperature sensor, heating circuit M2'/>
+	   <enum bytes='DF' text='Lead break room temperature sensor, heating circuit M3'/>
+	   <enum bytes='E0' text='Error, external subscriber / appliance on the LON'/>
 	   <enum bytes='E4' text='Error supply voltage'/>
-	   <enum bytes='E5' text='Internal error (ionization)'/>
-	   <enum bytes='E6' text='Exhaust / supply air clogged'/>
-	   <enum bytes='F0' text='(Exchange control) internal error'/>
-	   <enum bytes='F1' text='Triggered exhaust gas temperature'/>
-	   <enum bytes='F2' text='Triggered temperature limiter'/>
-	   <enum bytes='F3' text='Flammensigal beim Brennerstart bereits vorhanden'/>
-	   <enum bytes='F4' text='Flammensigal nicht vorhanden'/>
-	   <enum bytes='F7' text='Differenzdrucksensor defekt'/>
-	   <enum bytes='F8' text='Brennstoffventil schliesst zu spaet'/>
-	   <enum bytes='F9' text='Geblaesedrehzahl beim Brennerstart zu niedrig'/>
-	   <enum bytes='FA' text='Geblaesestillstand nicht erreicht'/>
-	   <enum bytes='FD' text='Fehler Gasfeuerungsautomat'/>
-	   <enum bytes='FE' text='Starkes Stoerfeld (EMV) in der Naehe oder Elektronik defekt'/>
-	   <enum bytes='FF' text='Starkes Stoerfeld (EMV) in der Naehe oder interner Fehler'/>
+	   <enum bytes='E5' text='Internal error, burner control unit'/>
+	   <enum bytes='E6' text='Fault, feedback, oil preheater (for the Vitoplus)'/>
+	   <enum bytes='F0' text='Communication error, burner control unit'/>
+	   <enum bytes='F1' text='Flue gas temperature limiter has responded'/>
+	   <enum bytes='F2' text='Temperature limiter has responded'/>
+	   <enum bytes='F3' text='Flame signal is already present at burner start'/>
+	   <enum bytes='F4' text='No flame signal detected'/>
+	   <enum bytes='F5' text='Air pressure switch not open at burner start or not closed when ignition load is reached'/>
+	   <enum bytes='F6' text='Gas pressure switch not open at burner start or not closed after the flame has stabilised'/>
+	   <enum bytes='F7' text='Air pressure sensor, sensor short circuit or offset value outside tolerance'/>
+	   <enum bytes='F8' text='Fuel valve closes too late'/>
+	   <enum bytes='F9' text='Fan speed too low at burner start'/>
+	   <enum bytes='FA' text='Fan speed too high at burner start'/>
+	   <enum bytes='FC' text='Modulation valve control faulty'/>
+	   <enum bytes='FD' text='Fault, burner control unit'/>
+	   <enum bytes='FE' text='SBoiler coding card faulty or incorrect, or EMC fault'/>
+	   <enum bytes='FF' text='Internal error'/>
 	   <enum text='UNKNOWN'/>
 	</unit>
 	<unit name='DeviceType'>
