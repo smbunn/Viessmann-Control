@@ -19,19 +19,25 @@
      </config>
  </unix>
 	<units>
-	<unit name='Temperatur'>
+	<unit name='Temperature'>
 	   <abbrev>UT</abbrev>
 	   <calc get='V/10' set='V*10'/>
 	   <type>short</type>
 	   <entity>Degrees Celsius</entity>
 	</unit>
-	<unit name='Neigung'>
+	<unit name='Number/10'>
 	   <abbrev>UN</abbrev>
 	   <calc get='V/10' set='V*10'/>
 	   <type>short</type>
 	   <entity></entity>
-	</unit>	
-	<unit name='Temperature100'>
+	</unit>
+    <unit name='Number'>
+      <abbrev>NU</abbrev>
+      <calc get='V' set='V'/>
+      <type>short</type>
+      <entity></entity>
+    </unit>
+    <unit name='Temperature100'>
 	   <abbrev>UT2</abbrev>
 	   <calc get='V/100' set='V*100'/>
 	   <type>short</type>
@@ -49,13 +55,13 @@
           <type>char</type>
           <entity>Degrees Celsius</entity>
 	</unit>
-	<unit name='Temperatur 1Byte unsigned'>
+	<unit name='Temperature 1Byte unsigned'>
           <abbrev>UT1U</abbrev>
           <calc get='V/2' set='V*2'/>
           <type>uchar</type>
           <entity>Degrees Celsius</entity>
 	</unit>
-	<unit name='Temperatur 1Byte ganzzahlig'>
+	<unit name='Temperature 1Byte unsigned'>
           <abbrev>UTI</abbrev>
           <calc get='V' set='V'/>
           <type>uchar</type>
@@ -73,13 +79,13 @@
 	   <type>int</type>
 	   <entity></entity>
 	</unit>
-	<unit name='Prozent'>
+	<unit name='Percent'>
 	   <abbrev>PR</abbrev>
 	   <calc get='V/2' set='V*2'/>
 	   <type>short</type>
 	   <entity>%</entity>
 	</unit>
-	<unit name='Prozent 1 Byte ganzzahlig'>
+	<unit name='Percent 1 Byte unsigned'>
 	   <abbrev>PR1</abbrev>
 	   <calc get='V' set='V'/>
 	   <type>uchar</type>
@@ -202,7 +208,7 @@
 	   <enum bytes='CB' text='Error, maximum pressure 2'/>
 	   <enum bytes='CD' text='cCommunication error, Vitocom 300 (KM BUS)'/>
 	   <enum bytes='CE' text='Communication error, connection extension (KM BUS)'/>
-	   <enum bytes='CF' text='Communication error: LON – module for controller module'/>
+	   <enum bytes='CF' text='Communication error: LON â€“ module for controller module'/>
 	   <enum bytes='D1' text='Burner Fault, Boiler'/>
 	   <enum bytes='D4' text='Safety breaker tripped or fault message is not inserted properly'/>
 	   <enum bytes='D5' text='Cascade: Boiler does not respond'/>
