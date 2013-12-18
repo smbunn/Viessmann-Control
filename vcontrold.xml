@@ -245,9 +245,9 @@
 	<unit name='DeviceType'>
 		<abbrev>DT</abbrev>
 		<type>enum</type>
-			<enum bytes='20 53 01 2B' text='V200WB2 ID=2053 Protokoll:GWG_VBEM'/>
-			<enum bytes='20 98' text='V200KW2 ID=2098 Protokoll:KW'/>
-			<enum bytes='20 C2' text='VDensHO1 ID=20C2 Protokoll:KW'/>
+			<enum bytes='20 53 01 2B' text='V200WB2 ID=2053 Protocol:GWG_VBEM'/>
+			<enum bytes='20 98' text='V200KW2 ID=2098 Protocol:KW'/>
+			<enum bytes='20 C2' text='VDensHO1 ID=20C2 Protocol:KW'/>
 			<enum text='UNKNOWN'/>
 	</unit>
 	<unit name='Burner Hours'>

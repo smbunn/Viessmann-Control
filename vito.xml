@@ -280,10 +280,6 @@
     <unit>UT</unit>
     <description>Determine the room temperature M3 in degrees C</description>
   </command>  
-
-
-
-
 	<command name='getSavingMode' protocmd='getaddr'>
 		<addr>2331</addr>
 		<len>1</len>
