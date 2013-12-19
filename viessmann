@@ -13,7 +13,7 @@ fi
 if [ "$1" = "config" ]; then
 cat << __EOM
 graph_title heating temperatures
-graph_args --lower-limit -20 --upper-limit 120
+graph_args --lower-limit -20 --upper-limit 100
 graph_category Viessmann
 graph_vlabel Temp C
 graph_scale no
@@ -26,18 +26,26 @@ getWaterTemp.label Hot Water
 getWaterTemp.info hot water temperature in degrees C
 getBoilerTemp.label Boiler Temp
 getBoilerTemp.info boiler temperature in degrees C.
-getExhaustTemp.label collector
-getExhaustTemp.info collector temperature in degrees C.
-getExhaustTemp.warning 90
-getExhaustTemp.critical 120
+getExhaustTemp.label Exhaust
+getExhaustTemp.info Exhaust temperature in degrees C.
+#getExhaustTemp.warning 90
+#getExhaustTemp.critical 120
+getTemp17A.label Return water 17A
+getTemp17A.info 17A water temperature
 getTemp17B.label Return water 17B
-getTemp17B.info Return water temperature
-#getTemp17A.warning 75
-#getTemp17A.critical 85
+getTemp17B.info 17B water temperature
+getHotWaterTemp1.label Hot Water Temperature 1
+getHotWaterTemp1.info HotWater Temperature Sensor 1
+getHotWaterTemp2.label Hot Water Temperature 2
+getHotWaterTemp2.info HotWater Temperature Sensor 2
+getRoomTempSP.label Room Temperature Setpoint
+getRoomTempSP.info Room Temperature Setpoint
+getDHWTempSP.label Hot Water Temperature Setpoint
+getDHWTempSP.info Hot Water Temperature Setpoint
 __EOM
 exit 0;
 fi
  
-/usr/local/bin/vclient -m --host $VC_HOST --port $VC_PORT getOutsideTempLP getWaterTemp getBoilerTemp getExhaustTemp getTemp17B
+/usr/local/bin/vclient -m --host $VC_HOST --port $VC_PORT getOutsideTempLP getWaterTemp getBoilerTemp getExhaustTemp getTemp17A getTemp17B getHotWaterTemp1 getHotWaterTemp2 getRoomTempSP getDHWTempSP
 
 exit 0

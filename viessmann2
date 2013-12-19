@@ -1,0 +1,33 @@
+#!/bin/sh
+ 
+# Host to connect
+VC_HOST=localhost
+# Port as defined with ser2net
+VC_PORT=3002
+ 
+if [ "$1" = "autoconf" ]; then
+	echo yes;
+	exit 0;
+fi
+
+if [ "$1" = "config" ]; then
+cat << __EOM
+graph_title Run Hours
+#graph_printf %4.4f
+#graph_args --lower-limit -20 --upper-limit 100
+graph_category Viessmann
+graph_vlabel Hours
+graph_scale yes
+graph_info This graph shows boiler hours
+getBurnerHours1.label Burner Run Hours
+getBurnerHours1.info Operating hours since last service.
+getBurnerHours2.label Burner Run Hours 2
+getBurnerHours2.info not sure.
+
+__EOM
+exit 0;
+fi
+ 
+/usr/local/bin/vclient -m --host $VC_HOST --port $VC_PORT getBurnerHours1 getBurnerHours2
+
+exit 0

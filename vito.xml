@@ -83,11 +83,11 @@
     <description>Determine the flow temperature 17B in degrees C</description>
   </command>
   <command name='getBoilerTemp3' protocmd='getaddr'>
-		<addr>555A</addr>
-		<len>2</len>
-		<unit>UT</unit>
-		<description>Determine the boiler temperature in degrees C</description>
-	</command>
+	<addr>555A</addr>
+	<len>2</len>
+	<unit>UT</unit>
+	<description>Determine the boiler temperature in degrees C</description>
+  </command>
   <command name='getBurnerOutput' protocmd='getaddr'>
     <addr>55E3</addr>
     <len>1</len>
@@ -108,13 +108,13 @@
   </command>
   <command name='getOilConsump' protocmd='getaddr'>
     <addr>7574</addr>
-    <len>4</len>
+    <len>2</len>
     <unit>FL</unit>
     <description>Get Oil Consumption</description>
   </command>
   <command name='getBurnerStarts' protocmd='getaddr'>
     <addr>088A</addr>
-    <len>4</len>
+    <len>2</len>
     <unit>CO</unit>
     <description>Get Burner Starts</description>
   </command>
@@ -186,26 +186,26 @@
   </command>
   <command name='setRoomTempSP' protocmd='setaddr'>
     <addr>2306</addr>
-    <len>2</len>
-    <unit>UT</unit>
+    <len>1</len>
+    <unit>TS</unit>
     <description>Set the room temperature setpoint</description>
   </command>
   <command name='setReducedTempSP' protocmd='setaddr'>
     <addr>2307</addr>
-    <len>2</len>
-    <unit>UT</unit>
+    <len>1</len>
+    <unit>TS</unit>
     <description>Set the reduced temperature setpoint</description>
   </command>
   <command name='setPartyTemp' protocmd='setaddr'>
     <addr>2308</addr>
-    <len>2</len>
-    <unit>UT</unit>
+    <len>1</len>
+    <unit>TS</unit>
     <description>Set Party Temperature SP</description>
   </command>
   <command name='setDHWTempSP' protocmd='setaddr'>
     <addr>6300</addr>
-    <len>2</len>
-    <unit>UT1U</unit>
+    <len>1</len>
+    <unit>TS</unit>
     <description>Set the hot water temperature setpoint</description>
   </command>
   <command name='getCurrentOpMode' protocmd='getaddr'>
@@ -312,26 +312,26 @@
   </command>
   <command name='getRoomTempSP' protocmd='getaddr'>
     <addr>2306</addr>
-    <len>2</len>
-    <unit>UT</unit>
+    <len>1</len>
+    <unit>TS</unit>
     <description>Get the room temperature setpoint</description>
   </command>
   <command name='getReducedTempSP' protocmd='getaddr'>
     <addr>2307</addr>
-    <len>2</len>
-    <unit>UT</unit>
+    <len>1</len>
+    <unit>TS</unit>
     <description>Get the reduced temperature setpoint</description>
   </command>
   <command name='getPartyTemp' protocmd='getaddr'>
     <addr>2308</addr>
-    <len>2</len>
-    <unit>UT</unit>
+    <len>1</len>
+    <unit>TS</unit>
     <description>Get Party Temperature SP</description>
   </command>
   <command name='getDHWTempSP' protocmd='getaddr'>
     <addr>6300</addr>
-    <len>2</len>
-    <unit>UT</unit>
+    <len>1</len>
+    <unit>TS</unit>
     <description>Get the hot water temperature setpoint</description>
   </command>
   <command name='getStatusFrost' protocmd='getaddr'>
