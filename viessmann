@@ -18,10 +18,8 @@ graph_category Viessmann
 graph_vlabel Temp C
 graph_scale no
 graph_info This graph shows some of the temps
-getOutsideTempLP.label Outside Temp (LP)
-getOutsideTempLP.info Outside temperature in degrees C.
-# getOutsideTempLP.warning 25
-# getOutsideTempLP.critical 30
+getOutsideTemp.label Outside Temp (LP)
+getOutsideTemp.info Outside temperature in degrees C.
 getWaterTemp.label Hot Water
 getWaterTemp.info hot water temperature in degrees C
 getBoilerTemp.label Boiler Temp
@@ -46,6 +44,7 @@ __EOM
 exit 0;
 fi
  
-/usr/local/bin/vclient -m --host $VC_HOST --port $VC_PORT getOutsideTempLP getWaterTemp getBoilerTemp getExhaustTemp getTemp17A getTemp17B getHotWaterTemp1 getHotWaterTemp2 getRoomTempSP getDHWTempSP
+/usr/local/bin/vclient -m --host $VC_HOST --port $VC_PORT getOutsideTemp getWaterTemp getBoilerTemp getExhaustTemp getTemp17A getTemp17B getHotWaterTemp1 getHotWaterTemp2 getRoomTempSP getDHWTempSP
 
+	
 exit 0
