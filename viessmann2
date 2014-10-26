@@ -13,7 +13,7 @@ fi
 if [ "$1" = "config" ]; then
 cat << __EOM
 graph_title Run Hours
-#graph_printf %4.4f
+#graph_printf %9.4f
 #graph_args --lower-limit -20 --upper-limit 100
 graph_category Viessmann
 graph_vlabel Hours
@@ -28,6 +28,6 @@ __EOM
 exit 0;
 fi
  
-/usr/local/bin/vclient -m --host $VC_HOST --port $VC_PORT getBurnerHours1 getBurnerHours2
+/usr/local/bin/vclient -m --host $VC_HOST --port $VC_PORT getTemp17A getBurnerHours1 getBurnerHours2
 
 exit 0
