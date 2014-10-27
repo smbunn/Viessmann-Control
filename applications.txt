@@ -1,0 +1,34 @@
+1password
+7zip
+Bitvise SSH client
+Cisco anyconnect
+Citrix access gateway
+Citrix receiver
+Subversion client
+Copernic Desktop
+Dropbox
+EPANET 2
+GitHub
+Chrome
+GoToMeeting
+iCloud
+Java7
+Logitech Webcam
+Matrikon OPC
+CRM Client for Outlook
+Office + Visio
+Notepad++
+PaintShop Pro 7
+Paint.net
+Picassa 3
+Putty
+Python 2.7.8
+Quicktime 7
+Samsung Kies
+Skype
+Sony PC Companion
+TightVNC
+Tortoise SVN
+VLC
+WinRAR
+Yammer Notifier
