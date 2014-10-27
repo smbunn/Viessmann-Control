@@ -1,0 +1,61 @@
+body {
+	background: black;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+hr {
+    border: 0;
+    border-bottom: 1px dashed gray;
+	
+}
+th {
+	padding-bottom: 5px;
+}
+h3 {
+	margin: 15px;
+}
+.mainPageClass{
+	font-family: "Verdena", sans-serif;
+	color: white;
+	background: linear-gradient(#45484d,#000000);
+	overflow: hidden;
+}
+.centerTable {
+	text-align: center;
+}
+.status {
+	font-family: "Verdena", sans-serif;
+	font-size: 0.7em;
+	text-align: right;
+	padding: 1em;
+	color: gray;
+}
+.ui-button-text {
+	font-size: 0.8em;
+}
+.timerTable {
+	text-align: center;
+}
+.topCell {
+	padding:10px;
+	vertical-align: top;
+}
+.ui-slider-horizontal .ui-state-default {
+	background: #B0B0B0;
+	border: 1px #404040 inset;
+}
+
+
+.gauge {
+        width:180px; height:130px;
+        display: inline-block;
+        margin: 0.1em;
+}
+.sliderTag(
+	text-align:center;
+}
+
+.radioLabel {
+	width: 33%;
+}

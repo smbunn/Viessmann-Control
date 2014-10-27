@@ -209,9 +209,9 @@
     <description>Set the hot water temperature setpoint</description>
   </command>
   <command name='getCurrentOpMode' protocmd='getaddr'>
-    <addr>2323</addr>
+    <addr>2500</addr>
     <len>1</len>
-    <unit>CM</unit>
+    <unit>RM</unit>
     <description>Current Operating Mode</description>
   </command> 
  <command name='getCurrentOpMode1' protocmd='getaddr'>
