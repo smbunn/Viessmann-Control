@@ -116,7 +116,7 @@
 	</unit>
 	<unit name='ChangeMode'>
 	   <abbrev>CM</abbrev>
-	   <type>enum</type>
+	   <type>char</type>
 	   <enum bytes='00' text='Standby'/>
 	   <enum bytes='01' text='DHW Only'/>
 	   <enum bytes='02' text='H+WW'/>

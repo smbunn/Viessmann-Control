@@ -24,12 +24,6 @@ getWaterTemp.label Hot Water
 getWaterTemp.info hot water temperature in degrees C
 getBoilerTemp.label Boiler Temp
 getBoilerTemp.info boiler temperature in degrees C.
-getExhaustTemp.label Exhaust
-getExhaustTemp.info Exhaust temperature in degrees C.
-#getExhaustTemp.warning 90
-#getExhaustTemp.critical 120
-#getTemp17A.label Return water 17A
-#getTemp17A.info 17A water temperature
 getTemp17B.label Return water 17B
 getTemp17B.info 17B water temperature
 getHotWaterTemp1.label Hot Water Temperature 1
@@ -44,7 +38,7 @@ __EOM
 exit 0;
 fi
  
-/usr/local/bin/vclient -m --host $VC_HOST --port $VC_PORT getTemp17A getOutsideTemp getWaterTemp getBoilerTemp getExhaustTemp getTemp17B getHotWaterTemp1 getHotWaterTemp2 getRoomTempSP getDHWTempSP
+/usr/local/bin/vclient -m --host $VC_HOST --port $VC_PORT getTemp17A getOutsideTemp getWaterTemp getBoilerTemp getTemp17B getHotWaterTemp1 getHotWaterTemp2 getRoomTempSP getDHWTempSP
 
 	
 exit 0
